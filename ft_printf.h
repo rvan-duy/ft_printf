@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_printf.h                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/01/05 11:30:31 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/01/05 13:08:15 by rvan-duy      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <stdarg.h>
+# include <unistd.h>
+# include "libft.h"
+
+typedef struct
+{
+    char    flag;
+    int     width;
+    int     precision;    
+} parameters;
+
+void handle_format_specifier(const char *c, va_list args);
+
+#endif
