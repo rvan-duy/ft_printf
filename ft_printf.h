@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:30:31 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/06 17:20:21 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/08 16:30:04 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include "libft/libft.h"
+# include "libft.h"
 
 typedef struct
 {
+    int     len;
     char    *str;
     char    flag;
     int     width;
@@ -26,7 +27,7 @@ typedef struct
     char    specifier;   
 } parameters;
 
-void        handle_format_specifier(const char *c, va_list args);
+int         handle_format_specifier(const char *c, va_list args);
 parameters  make_struct_format(const char *c, va_list args);
 
 #endif
