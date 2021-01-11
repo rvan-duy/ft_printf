@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 21:38:15 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/11 22:16:27 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/12 00:04:19 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ char    *generate_string(parameters input, va_list args)
         str = generate_c_string(input, args);
     //if (input.specifier == 'd' || input.specifier == 'i')
         //str = generate_d_string(input, args);
-    
-    
-    
+    if (!str)
+        return (NULL);
     return (str);
 }

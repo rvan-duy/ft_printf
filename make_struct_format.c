@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:27:39 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/11 23:40:23 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/12 00:13:00 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int is_flag(char c)
 // Do I need to take into account invalid inputs? Like '++' or ' +'
 parameters read_flags(parameters input)
 {
+	input.flag_minus = 0;
+	input.flag_zero = 0;
 	while (is_flag(*input.str))
 	{
 		if (*input.str == '-')
@@ -114,9 +116,8 @@ parameters  make_struct_format(const char *c, va_list args)
 	params = read_flags(params);
 	params = read_numbers(params, args, 1);
 	params = read_numbers(params, args, 0);
-	printf("%d\n", params.flag_zero);
 	params = read_specifier(params);
-	print_struct(params);
+	//print_struct(params);
 	free(params.str - params.len);
 	return (params);
 }

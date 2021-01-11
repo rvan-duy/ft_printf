@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 22:09:43 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/11 23:40:49 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/12 00:21:17 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@ char    *make_c_string(parameters input, va_list args)
     char    *str;
     int     i;
 
+    i = 0;
     str = ft_calloc(input.width + 1, sizeof(char));
     if (!str)
         return (NULL);
     if (!input.flag_minus)
     {
         ft_memset(str, ' ', input.width - 1);
-        str[input.width] = va_arg(args, int);
+        str[input.width - 1] = va_arg(args, int);
     }
     else
     {
@@ -45,5 +46,7 @@ char    *generate_c_string(parameters input, va_list args)
     if (!input.width)
         input.width = 1;
     str = make_c_string(input, args);
+    if (!str)
+        return (NULL);
     return (str);
 }

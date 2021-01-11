@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/06 17:19:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/11 23:39:16 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/12 00:05:23 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int handle_format_specifier(const char *c, va_list args)
 
     c++;
     params = make_struct_format(c, args);
-    str = generate_string(params, args);
-    printf("(((%s)))\n", str);
+    str = generate_string(params, args); // if str = NULL?
+    ft_putstr_fd(str, 1);
     return (params.len + 1);
 }
