@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:27:39 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/11 17:34:28 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/11 18:47:43 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,22 @@ parameters read_asterisks(parameters input, va_list args, int type)
 	int value;
 
 	value = va_arg(args, int);
+	if (value < 0 && type)
+	{
+		if (!ft_strchr(input.flags, '-'))
+			input.flags = ft_strjoin(input.flags, "-"); // what if strjoin fails?
+		value = value * -1;
+	}
+	if (value < 0 && !type)
+		input.precision = 0;
 	if (type)
 		input.width = value;
-	else
+	else if (value >= 0 && !type)
 		input.precision = value;
 	input.str++;
 	return (input);
 }
 
-// TODO: implement *
 parameters read_numbers(parameters input, va_list args, int type)
 {
 	size_t  len;
@@ -114,7 +121,6 @@ int find_specifier_len(const char *c)
 	return (i + 1);
 }
 
-// do something with va_list, when * is used
 parameters  make_struct_format(const char *c, va_list args)
 {
 	parameters params;
