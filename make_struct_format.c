@@ -6,22 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:27:39 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/06 17:20:11 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/11 15:44:39 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-parameters free_str(parameters input, int len)
-{
-    while (len > 0)
-    {
-        input.str--;
-        len--;
-    }
-    free(input.str);
-    return (input);
-}
 
 parameters read_specifier(parameters input)
 {
@@ -63,30 +52,65 @@ int is_flag(char c)
     return (0);
 }
 
-parameters read_flag(parameters input)
+int count_flags(char *str)
 {
-    if (is_flag(*input.str))
+    int i;
+   
+    i = 0;
+    while (is_flag(str[i]))
+        i++;
+    return (i);
+}
+
+// Do I need to take into account invalid inputs? Like '++' or ' +'
+parameters read_flags(parameters input)
+{
+    int i;
+    int flag_count;
+
+    flag_count = count_flags(input.str);
+    i = 0;
+    input.flags = ft_calloc(flag_count + 1, sizeof(char));
+    while (flag_count > 0)
     {
-        input.flag = *input.str;
+        input.flags[i] = *input.str;
         input.str++;
+        i++;
+        flag_count--;
     }
-    else
-        input.flag = 0;
     return (input);
+}
+
+int is_specifier(char c)
+{
+    char specifiers[] = { 'c', 's', 'p', 'd', 'i', 'u', 'x', 'X', '%' };
+    if (ft_strchr(specifiers, c))
+        return (1);
+    return (0);
+}
+
+int find_specifier_len(const char *c)
+{
+    int i;
+
+    i = 1;
+    while (!is_specifier(c[i]))
+        i++;
+    return (i + 1);
 }
 
 // do something with va_list, when * is used
 parameters  make_struct_format(const char *c, va_list args)
 {
     parameters params;
-    size_t len;
 
-    params.str = ft_strdup(c);
-    len = ft_strlen(params.str);
-    params = read_flag(params);
+    params.len = find_specifier_len(c);
+    params.str = ft_strndup(c, params.len);
+    params = read_flags(params);
     params = read_numbers(params, 1);
     params = read_numbers(params, 0);
     params = read_specifier(params);
-    params = free_str(params, len); // does this free correctly?
+    print_struct(params);
+    free(params.str - params.len);
     return (params);
 }
