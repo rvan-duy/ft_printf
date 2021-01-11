@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:27:39 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/11 18:47:43 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/11 23:40:23 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ parameters read_asterisks(parameters input, va_list args, int type)
 	value = va_arg(args, int);
 	if (value < 0 && type)
 	{
-		if (!ft_strchr(input.flags, '-'))
-			input.flags = ft_strjoin(input.flags, "-"); // what if strjoin fails?
+		input.flag_minus = 1;
 		value = value * -1;
 	}
 	if (value < 0 && !type)
@@ -69,36 +68,21 @@ parameters read_numbers(parameters input, va_list args, int type)
 
 int is_flag(char c)
 {
-	if (c == '-' || c == '+' || c == ' ' || c == '#' || c == '0')
+	if (c == '-' || c == '0')
 		return (1);
 	return (0);
-}
-
-int count_flags(char *str)
-{
-	int i;
-   
-	i = 0;
-	while (is_flag(str[i]))
-		i++;
-	return (i);
 }
 
 // Do I need to take into account invalid inputs? Like '++' or ' +'
 parameters read_flags(parameters input)
 {
-	int i;
-	int flag_count;
-
-	flag_count = count_flags(input.str);
-	i = 0;
-	input.flags = ft_calloc(flag_count + 1, sizeof(char));
-	while (flag_count > 0)
+	while (is_flag(*input.str))
 	{
-		input.flags[i] = *input.str;
+		if (*input.str == '-')
+			input.flag_minus = 1;
+		if (*input.str == '0')
+			input.flag_zero = 1;
 		input.str++;
-		i++;
-		flag_count--;
 	}
 	return (input);
 }
@@ -115,7 +99,7 @@ int find_specifier_len(const char *c)
 {
 	int i;
 
-	i = 1;
+	i = 0;
 	while (!is_specifier(c[i]))
 		i++;
 	return (i + 1);
@@ -126,10 +110,11 @@ parameters  make_struct_format(const char *c, va_list args)
 	parameters params;
 
 	params.len = find_specifier_len(c);
-	params.str = ft_strndup(c, params.len);
+	params.str = ft_strndup(c, params.len); // this can fail
 	params = read_flags(params);
 	params = read_numbers(params, args, 1);
 	params = read_numbers(params, args, 0);
+	printf("%d\n", params.flag_zero);
 	params = read_specifier(params);
 	print_struct(params);
 	free(params.str - params.len);

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   handle_format_specifier.c                          :+:    :+:            */
+/*   generate_string.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/06 17:19:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/11 23:39:16 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/01/11 21:38:15 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/01/11 22:16:27 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int handle_format_specifier(const char *c, va_list args)
+char    *generate_string(parameters input, va_list args)
 {
-    parameters  params;
-    char        *str;
+    char *str;
 
-    c++;
-    params = make_struct_format(c, args);
-    str = generate_string(params, args);
-    printf("(((%s)))\n", str);
-    return (params.len + 1);
+    if (input.specifier == 'c')
+        str = generate_c_string(input, args);
+    //if (input.specifier == 'd' || input.specifier == 'i')
+        //str = generate_d_string(input, args);
+    
+    
+    
+    return (str);
 }

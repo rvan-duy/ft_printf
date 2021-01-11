@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:30:31 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/11 13:25:26 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/11 22:50:18 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,18 @@ typedef struct
 {
     int     len;
     char    *str;
-    char    *flags;
+    int     flag_minus;
+    int     flag_zero;
     int     width;
     int     precision;
-    char    specifier;   
+    char    specifier;
 } parameters;
 
 int         handle_format_specifier(const char *c, va_list args);
 parameters  make_struct_format(const char *c, va_list args);
+char        *generate_string(parameters input, va_list args);
+char        *generate_c_string(parameters input, va_list args);
+char        *generate_d_string(parameters input, va_list args);
 
 // ILLEGAL -- REMOVE AFTERWARDS
 void        print_struct(parameters input);
