@@ -6,20 +6,20 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:27:39 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 13:48:20 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/12 16:11:37 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-parameters read_specifier(parameters input)
+parameters		read_specifier(parameters input)
 {
 	input.specifier = *input.str;
 	input.str++;
 	return (input);
 }
 
-parameters read_asterisks(parameters input, va_list args, int type)
+parameters	read_asterisks(parameters input, va_list args, int type)
 {
 	int value;
 
@@ -39,7 +39,7 @@ parameters read_asterisks(parameters input, va_list args, int type)
 	return (input);
 }
 
-parameters read_numbers(parameters input, va_list args, int type)
+parameters	read_numbers(parameters input, va_list args, int type)
 {
 	size_t  len;
 	char    *newstr;
@@ -66,7 +66,7 @@ parameters read_numbers(parameters input, va_list args, int type)
 	return (input);
 }
 
-int is_flag(char c)
+int			is_flag(char c)
 {
 	if (c == '-' || c == '0')
 		return (1);
@@ -74,7 +74,7 @@ int is_flag(char c)
 }
 
 // Do I need to take into account invalid inputs? Like '++' or ' +'
-parameters read_flags(parameters input)
+parameters	read_flags(parameters input)
 {
 	input.flag_minus = 0;
 	input.flag_zero = 0;
@@ -89,7 +89,7 @@ parameters read_flags(parameters input)
 	return (input);
 }
 
-int is_specifier(char c)
+int			is_specifier(char c)
 {
 	char specifiers[] = { 'c', 's', 'p', 'd', 'i', 'u', 'x', 'X', '%' };
 	if (ft_strchr(specifiers, c))
@@ -97,7 +97,7 @@ int is_specifier(char c)
 	return (0);
 }
 
-int find_specifier_len(const char *c)
+int			find_specifier_len(const char *c)
 {
 	int i;
 
@@ -107,7 +107,7 @@ int find_specifier_len(const char *c)
 	return (i + 1);
 }
 
-parameters  make_struct_format(const char *c, va_list args)
+parameters	make_struct_format(const char *c, va_list args)
 {
 	parameters params;
 
