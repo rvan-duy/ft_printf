@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   digits.c                                           :+:    :+:            */
+/*   unsigned.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/12 10:49:38 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 23:32:48 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/01/12 22:59:13 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/01/12 23:33:35 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-char	*generate_d_string(parameters input, va_list args)
+char	*generate_u_string(parameters input, va_list args)
 {
-	char	*tmp;
 	char	*str;
+	char	*tmp;
 	char	padder;
 
 	padder = find_padder(input.flag_zero);
 	if (!input.width)
 		input.width = 1;
-	tmp = ft_itoa(va_arg(args, int));
+	tmp = ft_utoa(va_arg(args, unsigned int));
 	if (!tmp)
 		return (NULL);
 	str = apply_width(tmp, padder, input);
