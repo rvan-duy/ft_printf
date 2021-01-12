@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 20:21:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 13:40:54 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/12 13:48:01 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main()
 {
     //printf("(%*d)\n", -5, 3);
     //printf("(%+5d)\n", 3);
-    ft_printf("(%-4c)\n", 'g');
+    //ft_printf("(%-4c)\n", 'g');
     //printf("%+ d\n", 3);
     //printf("%05d\n", 3);
     //ft_printf("hoi%-*.*casd\n", 3, 4, 'h');
@@ -66,7 +66,8 @@ int main()
     printf("(%10.5d)\n", 23);
     printf("(%5.10d)\n", 23);
     printf("(%10.5d)\n", 23);*/
-
+    ft_printf("%%\n");
+    
 
     return 0;
 }
