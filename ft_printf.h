@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:30:31 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 00:18:34 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/12 13:10:50 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ parameters  make_struct_format(const char *c, va_list args);
 char        *generate_string(parameters input, va_list args);
 char        *generate_c_string(parameters input, va_list args);
 char        *generate_d_string(parameters input, va_list args);
+char        *apply_width(char *str, char padder, parameters input);
 
 // ILLEGAL -- REMOVE AFTERWARDS
 void        print_struct(parameters input);
