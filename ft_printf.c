@@ -6,36 +6,36 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 20:21:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 23:36:37 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/13 14:11:02 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *c, ...)
+void    ft_putchar_len(char c, lengths *lens)
+{
+    write(1, &c, 1);
+    lens->specifier++;
+    lens->str++;
+}
+
+int     ft_printf(const char *c, ...)
 {
     va_list args;
-    int len;
-    
+    lengths lens;
+
 	va_start(args, c);
     while (*c)
     {
-        len = 0;
+        lens.specifier = 0;
         if (*c != '%')
-        {
-            ft_putchar_fd(*c, 1);
-            len++;
-        }
+            ft_putchar_len(*c, &lens);
         else
-        {
-            len = handle_format_specifier(c, args);
-            if (!len)
-                return (0);
-        }
-        c = c + len;
+            handle_format_specifier(c, args, &lens);
+        c = c + lens.specifier;
     }
     va_end(args);
-	return (1);
+	return (lens.str);
 }
 
 int main()
@@ -71,8 +71,11 @@ int main()
     //ft_printf("(%10c)\n", 'h');
     //printf("(%-10c)\n", 'h');
     //ft_printf("(%-10c)\n", 'h');
-    unsigned int j = -1;
-    ft_printf("%020u\n", j);
-    printf("%020u\n", j);
+    //unsigned int j = -1;
+    //ft_printf("%020u\n", j);
+    //printf("%020u\n", j);
+    ft_printf("%d\n", ft_printf("%d%d%d9865865%c\n", 10, 30, 1000, 'd'));
+    printf("%d\n", printf("%d%d%d9865865%c\n", 10, 30, 1000, 'd'));
+
     return 0;
 }

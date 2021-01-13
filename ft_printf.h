@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:30:31 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 23:19:08 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/13 14:09:50 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@
 // ILLEGAL -- REMOVE AFTERWARDS
 # include <stdio.h>
 
+typedef struct {
+    int     str;
+    int     specifier;
+} lengths;
+
 typedef struct
 {
     int     len;
@@ -32,7 +37,7 @@ typedef struct
     char    specifier;
 } parameters;
 
-int         handle_format_specifier(const char *c, va_list args);
+void        handle_format_specifier(const char *c, va_list args, lengths *lens);
 parameters  make_struct_format(const char *c, va_list args);
 char        *generate_string(parameters input, va_list args);
 char        *generate_c_string(parameters input, va_list args);
