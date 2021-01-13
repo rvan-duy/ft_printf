@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 22:09:43 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 18:42:09 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/13 16:14:22 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*generate_c_string(parameters input, va_list args)
 		input.width = 1;
 	tmp = ft_calloc(2, sizeof(char));
 	tmp[0] = va_arg(args, int);
-	str = apply_width(tmp, ' ', input);
+	str = expand_str(tmp, ' ', input.width, input.flag_minus);
 	free(tmp);
 	if (!str)
 		return (NULL);

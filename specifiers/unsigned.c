@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 22:59:13 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 23:33:35 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/13 16:13:50 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*generate_u_string(parameters input, va_list args)
 	tmp = ft_utoa(va_arg(args, unsigned int));
 	if (!tmp)
 		return (NULL);
-	str = apply_width(tmp, padder, input);
+	str = expand_str(tmp, padder, input.width, input.flag_minus);
 	free(tmp);
 	if (!str)
 		return (NULL);

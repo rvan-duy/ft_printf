@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:30:31 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/13 14:09:50 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/13 16:51:06 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct
     char    specifier;
 } parameters;
 
+int         ft_printf(const char *c, ...);
 void        handle_format_specifier(const char *c, va_list args, lengths *lens);
 parameters  make_struct_format(const char *c, va_list args);
 char        *generate_string(parameters input, va_list args);
@@ -44,7 +45,7 @@ char        *generate_c_string(parameters input, va_list args);
 char        *generate_d_string(parameters input, va_list args);
 char        *generate_s_string(parameters input, va_list args);
 char        *generate_u_string(parameters input, va_list args);
-char        *apply_width(char *str, char padder, parameters input);
+char        *expand_str(char *str, char padder, int range, int flag_minus);
 char        find_padder(int flag_zero);
 
 // ILLEGAL -- REMOVE AFTERWARDS
