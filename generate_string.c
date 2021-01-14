@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 21:38:15 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 23:00:27 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/14 17:02:43 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*generate_string(parameters input, va_list args)
 		str = generate_s_string(input, args);
 	if (input.specifier == 'u')
 		str = generate_u_string(input, args);
+	if (input.specifier == 'x' || input.specifier == 'X')
+		str = generate_x_string(input, args);
 	if (input.specifier == '%')
 		str = ft_strdup("%");
 	if (!str)
