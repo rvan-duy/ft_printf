@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 12:44:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/13 16:46:44 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/14 17:28:07 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*expand_str(char *str, char padder, int range, int flag_minus)
 	len = ft_strlen(str);
 	if (len >= range)
 		return (ft_strdup(str));
-	tmp = ft_calloc(range - len, sizeof(char));
+	tmp = ft_calloc(range - len + 1, sizeof(char));
 	ft_memset(tmp, padder, range - len);
 	if (flag_minus)
 		newstr = ft_strjoin(str, tmp);

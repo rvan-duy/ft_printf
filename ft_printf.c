@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 20:21:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/14 17:06:45 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/14 17:29:52 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ int     ft_printf(const char *c, ...)
 /* OLD MAIN */
 int main()
 {
-    printf("return value: (%d)\n", printf("test1: (%5.3X) - ", 1));
-    ft_printf("return value: (%d)\n", ft_printf("test1: (%5.3X) - ", 1));
-    printf("return value: (%d)\n", printf("test1: (%5.3x) - ", 1));
-    ft_printf("return value: (%d)\n", ft_printf("test1: (%5.3x) - ", 1));
     printf("return value: (%d)\n", printf("test1: (%5.3d) - ", 1));
     ft_printf("return value: (%d)\n", ft_printf("test1: (%5.3d) - ", 1));
+    printf("return value: (%d)\n", printf("test1: (%-20.10X) - ", 4545));
+    ft_printf("return value: (%d)\n", ft_printf("test1: (%-20.10X) - ", 4545));
+    printf("return value: (%d)\n", printf("test1: (%-20.10x) - ", 4545));
+    ft_printf("return value: (%d)\n", ft_printf("test1: (%-20.10x) - ", 4545));
     //printf("(%*d)\n", -5, 3);
     //printf("(%+5d)\n", 3);
     //ft_printf("(%-4c)\n", 'g');
