@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:30:31 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 00:54:22 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 12:25:57 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ typedef struct
 } parameters;
 
 int         ft_printf(const char *c, ...);
-void        handle_format_specifier(const char *c, va_list args, lengths *lens);
-parameters  make_struct_format(const char *c, va_list args);
-char        *generate_string(parameters input, va_list args);
-char        *generate_c_string(parameters input, va_list args);
-char        *generate_d_string(parameters input, va_list args);
-char        *generate_s_string(parameters input, va_list args);
-char        *generate_u_string(parameters input, va_list args);
-char        *generate_x_string(parameters input, va_list args);
-char        *generate_p_string(parameters input, va_list args);
-char        *expand_str(char *str, char padder, int range, int flag_minus);
-char        find_padder(int flag_zero);
+void        pf_format_specifier_handler(const char *c, va_list args, lengths *lens);
+parameters  pf_struct_format_create(const char *c, va_list args);
+char        *pf_string_create(parameters input, va_list args);
+char        *pf_string_c_create(parameters input, va_list args);
+char        *pf_string_d_create(parameters input, va_list args);
+char        *pf_string_s_create(parameters input, va_list args);
+char        *pf_string_u_create(parameters input, va_list args);
+char        *pf_string_x_create(parameters input, va_list args);
+char        *pf_string_p_create(parameters input, va_list args);
+char        *pf_string_expand(char *str, char padder, int range, int flag_minus);
+char        pf_padder_find(int flag_zero);
 
 // ILLEGAL -- REMOVE AFTERWARDS
 void        print_struct(parameters input);

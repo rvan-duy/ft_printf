@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 20:21:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 02:06:57 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 12:25:57 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int     ft_printf(const char *c, ...)
         if (*c != '%')
             ft_putchar_len(*c, &lens);
         else
-            handle_format_specifier(c, args, &lens);
+            pf_format_specifier_handler(c, args, &lens);
         c = c + lens.specifier;
     }
     va_end(args);

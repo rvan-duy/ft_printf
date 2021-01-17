@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/16 18:15:09 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 02:06:23 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 12:23:12 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static char	*ltox(unsigned long n)
 	return (str);
 }
 
-char	*generate_p_string(parameters input, va_list args)
+char	*pf_string_p_create(parameters input, va_list args)
 {
 	char			*str;
 	static int 		i = 0;
@@ -61,13 +61,13 @@ char	*generate_p_string(parameters input, va_list args)
 
 	if (input.flag_minus && input.flag_zero)
 		input.flag_zero = 0;
-	padder = find_padder(input.flag_zero);
+	padder = pf_padder_find(input.flag_zero);
 	ptr = va_arg(args, void*);
 	ptr_value = (unsigned long)ptr;
 	tmp1 = ltox(ptr_value);
 	if (!tmp1)
 		return (NULL);
-	tmp2 = expand_str(tmp1, '0', input.precision, 0);
+	tmp2 = pf_string_expand(tmp1, '0', input.precision, 0);
 	/*if (i == 0)
 	{
 		write(1, "lets fail malloc!", ft_strlen("lets fail malloc!"));
@@ -81,7 +81,7 @@ char	*generate_p_string(parameters input, va_list args)
 	free(tmp2);
 	if (!tmp3)
 		return (NULL);
-	str = expand_str(tmp3, padder, input.width, input.flag_zero);
+	str = pf_string_expand(tmp3, padder, input.width, input.flag_zero);
 	free(tmp3);
 	return (str);
 }

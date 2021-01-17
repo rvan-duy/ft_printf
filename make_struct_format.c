@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   make_struct_format.c                               :+:    :+:            */
+/*   pf_struct_format_create.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
@@ -107,7 +107,7 @@ int			find_specifier_len(const char *c)
 	return (i + 1);
 }
 
-parameters	make_struct_format(const char *c, va_list args)
+parameters	pf_struct_format_create(const char *c, va_list args)
 {
 	parameters params;
 

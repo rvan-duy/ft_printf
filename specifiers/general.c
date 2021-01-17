@@ -6,13 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 12:44:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 01:30:18 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 12:21:25 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-char	*expand_str(char *str, char padder, int range, int flag_minus)
+char	*pf_string_expand(char *str, char padder, int range, int flag_minus)
 {
 	int		len;
 	char	*tmp;
