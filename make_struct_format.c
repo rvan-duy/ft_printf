@@ -86,6 +86,8 @@ parameters	read_flags(parameters input)
 			input.flag_zero = 1;
 		input.str++;
 	}
+	if (input.flag_minus && input.flag_zero)
+		input.flag_zero = 0;
 	return (input);
 }
 

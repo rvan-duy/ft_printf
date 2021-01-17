@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 20:21:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 12:25:57 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 16:35:52 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,16 @@ int     ft_printf(const char *c, ...)
 	return (lens.str);
 }
 
-/* OLD MAIN */
+/* OLD MAIN
 int main()
-{
+{*/
     /*int i = 1;
     int c = 0;
     ft_printf("Testing with unsigned chars:\n");
     ft_printf("%10c", c);*/
-
-    int c = 23;
-    int i = 44;
-    /* I tested a lot with when malloc fails but what should the return value be? */
-    printf("return %d", printf("(%p %p)\n", NULL, &c));
-    ft_printf("return %d", ft_printf("(%p %p)\n", NULL, &c));
+    
+    //printf("return %d\n", printf("(%020p %.5p)", &i, &c));
+    //ft_printf("return %d\n", ft_printf("(%020p %.5p)", &i, &c));
     //printf("(%p %p %p %p)\n", &c, NULL, NULL, NULL);
     //ft_printf("(%p %p %p %p)\n", &c, NULL, NULL, NULL);
     /*printf("(%p)\n", c);
@@ -143,7 +140,7 @@ int main()
     //ft_printf("(%10c)\n", 'h');
     //printf("(%-10c)\n", 'h');
     //ft_printf("(%-10c)\n", 'h');
-    //unsigned int j = -1;
+    //unsigned int j = -1;*/
     //ft_printf("%020u\n", j);
     //printf("%020u\n", j);
     //ft_printf("%d\n", ft_printf("%d%d%d9865865%c\n", 10, 30, 1000, 'd'));
@@ -152,5 +149,5 @@ int main()
     //printf("(%10.5d)\n", 11);
     //ft_printf("(%-10.5d)\n", 11);*/
 
-    return 0;
-}
+   /* return 0;
+}*/

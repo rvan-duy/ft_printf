@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   pf_format_specifier_handler.c                          :+:    :+:            */
+/*   ft_printf_tests.h                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/06 17:19:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 12:24:39 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/01/17 16:17:05 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/01/17 17:15:23 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-void	pf_format_specifier_handler(const char *c, va_list args, lengths *lens)
-{
-	parameters	params;
-	char		*str;
+# define uint unsigned int
 
-	c++;
-	params = pf_struct_format_create(c, args);
-	str = pf_string_create(params, args);
-	ft_putstr_fd(str, 1);
-	lens->specifier = params.len + 1;
-	if (str)
-		lens->str = lens->str + ft_strlen(str);
-	return ;
-}
+int     pf_tests_digits_random(int max_size);
+int     pf_tests_digits_widths_random();
+void    pf_tests_pointers_run();
+void    pf_tests_pointers_null_run();
+int     pf_tests_pointers_random();

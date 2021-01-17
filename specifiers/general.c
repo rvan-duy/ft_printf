@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 12:44:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 12:21:25 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 13:43:40 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*pf_string_expand(char *str, char padder, int range, int flag_minus)
 	char	*tmp;
 	char	*newstr;
 
+	if (!str)
+		return (NULL);
 	len = ft_strlen(str);
 	if (len >= range)
 		return (ft_strdup(str));
@@ -31,4 +33,11 @@ char	*pf_string_expand(char *str, char padder, int range, int flag_minus)
 		newstr = ft_strjoin(tmp, str);
 	free(tmp);
 	return (newstr);
+}
+
+char	*pf_error_return(char specifier)
+{
+	if (specifier == 'p')
+		return (ft_strdup("(nil)"));
+	return (NULL);
 }

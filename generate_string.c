@@ -12,13 +12,6 @@
 
 #include "ft_printf.h"
 
-char	*return_error(char specifier)
-{
-	if (specifier == 'p')
-		return (ft_strdup("(nil)"));
-	return (NULL);
-}
-
 char	*pf_string_create(parameters input, va_list args)
 {
 	char *str;
@@ -38,6 +31,6 @@ char	*pf_string_create(parameters input, va_list args)
 	if (input.specifier == '%')
 		str = ft_strdup("%");
 	if (!str)
-		return (return_error(input.specifier));
+		return (pf_error_return(input.specifier));
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:30:31 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 12:25:57 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 13:42:00 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define HEXADECIMALS_LOWER "0123456789abcdef"
 
 typedef struct {
-    int     str;
+    size_t  str;
     int     specifier;
 } lengths;
 
@@ -52,6 +52,7 @@ char        *pf_string_x_create(parameters input, va_list args);
 char        *pf_string_p_create(parameters input, va_list args);
 char        *pf_string_expand(char *str, char padder, int range, int flag_minus);
 char        pf_padder_find(int flag_zero);
+char        *pf_error_return(char specifier);
 
 // ILLEGAL -- REMOVE AFTERWARDS
 void        print_struct(parameters input);
