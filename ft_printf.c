@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 20:21:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/14 17:29:52 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 01:06:19 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,55 @@ int     ft_printf(const char *c, ...)
 /* OLD MAIN */
 int main()
 {
-    printf("return value: (%d)\n", printf("test1: (%5.3d) - ", 1));
-    ft_printf("return value: (%d)\n", ft_printf("test1: (%5.3d) - ", 1));
-    printf("return value: (%d)\n", printf("test1: (%-20.10X) - ", 4545));
-    ft_printf("return value: (%d)\n", ft_printf("test1: (%-20.10X) - ", 4545));
-    printf("return value: (%d)\n", printf("test1: (%-20.10x) - ", 4545));
-    ft_printf("return value: (%d)\n", ft_printf("test1: (%-20.10x) - ", 4545));
+    /*int i = 1;
+    int c = 0;
+    ft_printf("Testing with unsigned chars:\n");
+    ft_printf("%10c", c);*/
+
+    int c = 23;
+    printf("(%-033p)\n", c);
+    ft_printf("(%-033p)\n", c);
+    //ft_printf("(%p)\n", &i);
+
+    /* EXTERNAL TEST */
+	//printf("|%*3d|\n", 5, 0);
+    //ft_printf("|%*3d|\n", 5, 0);
+
+    //printf("test %d: some random characters: %c %c %c %c %c %c %c %c %c %c %c %c\n", i, 118, 112, 16, 0, 212, 218, 255, 140, 47, 42, 70, 53);
+    //ft_printf("test %d: some random characters: %c %c %c %c %c %c %c %c %c %c %c %c\n", i++, 118, 112, 16, 0, 212, 218, 255, 140, 47, 42, 70, 53);
+    //printf("%c\n", 16);
+    //ft_printf("%c\n", 16);
+    /*printf("return value: (%d)\n", printf("test %d: (%c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%4c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%4c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%3.3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%3.3c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%04c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%04c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%-3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%-3c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%-3.3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%-3.3c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%-.3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%-.3c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%0.3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%0.3c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%-.3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%-.3c) - ", i++, 'c'));*/
+    
+    //printf("return value: (%d)\n", printf("test1: (%5.3d) - ", 1));
+    //ft_printf("return value: (%d)\n", ft_printf("test1: (%5.3d) - ", 1));
+    //printf("return value: (%d)\n", printf("test1: (%-20.10X) - ", 4545));
+    //ft_printf("return value: (%d)\n", ft_printf("test1: (%-20.10X) - ", 4545));
+    //printf("return value: (%d)\n", printf("test1: (%-20.10x) - ", 4545));
+    //ft_printf("return value: (%d)\n", ft_printf("test1: (%-20.10x) - ", 4545));
+    //ft_printf("(%s)\n", NULL);
+    //int c = 'd';
+    //int *p;
+
+    //printf("return value: (%d)\n", printf("test1: (%020.15p) - ", &p));
+    
     //printf("(%*d)\n", -5, 3);
     //printf("(%+5d)\n", 3);
     //ft_printf("(%-4c)\n", 'g');
@@ -74,7 +117,7 @@ int main()
     printf("(%-05d)\n", 23);
     ft_printf("(%-05d)\n", 23);
     printf("(%060d)\n", 23);
-    ft_printf("(%060d)\n", 23);
+    ft_printf("(%060d)\n", 23);*/
     //printf("%2.2f\n", 3333.3333);
     /*printf("(%5.10d)\n", 23);
     printf("(%10.5d)\n", 23);

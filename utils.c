@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 23:06:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 23:07:46 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 01:08:48 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 char    find_padder(int flag_zero)
 {
     if (flag_zero)
-		return ('0');
+		  return ('0');
     return (' ');
 }
