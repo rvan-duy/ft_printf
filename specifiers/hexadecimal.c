@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 11:27:49 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/14 17:35:33 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 01:30:34 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ char		*generate_x_string(parameters input, va_list args)
 	char	*tmp2;
 
 	padder = find_padder(input.flag_zero);
-	if (!input.width)
-		input.width = 1;
 	decimal = va_arg(args, unsigned int);
 	tmp1 = itox(decimal, input.specifier);
 	if (!tmp1)
@@ -72,7 +70,5 @@ char		*generate_x_string(parameters input, va_list args)
 		return (NULL);
 	str = expand_str(tmp2, padder, input.width, input.flag_minus);
 	free(tmp2);
-	if (!str)
-		return (NULL);
 	return (str);
 }

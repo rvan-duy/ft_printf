@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/16 18:15:09 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 00:57:40 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 02:06:23 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,37 @@ static char	*ltox(unsigned long n)
 char	*generate_p_string(parameters input, va_list args)
 {
 	char			*str;
+	static int 		i = 0;
+	char			*tmp1;
+	char			*tmp2;
+	char			*tmp3;
+	char			padder;
 	void			*ptr;
 	unsigned long	ptr_value;
 
-	if (!input.width)
-		input.width = 1;
+	if (input.flag_minus && input.flag_zero)
+		input.flag_zero = 0;
+	padder = find_padder(input.flag_zero);
 	ptr = va_arg(args, void*);
 	ptr_value = (unsigned long)ptr;
-	str = ltox(ptr_value);
-	if (!str)
-		return (ft_strdup("(nil)"));
-	
+	tmp1 = ltox(ptr_value);
+	if (!tmp1)
+		return (NULL);
+	tmp2 = expand_str(tmp1, '0', input.precision, 0);
+	/*if (i == 0)
+	{
+		write(1, "lets fail malloc!", ft_strlen("lets fail malloc!"));
+		tmp2 = NULL;
+		i++;
+	}*/
+	free(tmp1);
+	if (!tmp2)
+		return (NULL);
+	tmp3 = ft_strjoin("0x", tmp2);
+	free(tmp2);
+	if (!tmp3)
+		return (NULL);
+	str = expand_str(tmp3, padder, input.width, input.flag_zero);
+	free(tmp3);
 	return (str);
 }

@@ -6,11 +6,18 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 21:38:15 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/16 18:13:31 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 02:03:58 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+char	*return_error(char specifier)
+{
+	if (specifier == 'p')
+		return (ft_strdup("(nil)"));
+	return (NULL);
+}
 
 char	*generate_string(parameters input, va_list args)
 {
@@ -31,6 +38,6 @@ char	*generate_string(parameters input, va_list args)
 	if (input.specifier == '%')
 		str = ft_strdup("%");
 	if (!str)
-		return (NULL);
+		return (return_error(input.specifier));
 	return (str);
 }

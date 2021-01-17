@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:27:39 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/12 16:11:37 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 01:16:22 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,8 @@ parameters	make_struct_format(const char *c, va_list args)
 	params = read_numbers(params, args, 1);
 	params = read_numbers(params, args, 0);
 	params = read_specifier(params);
-	//print_struct(params);
+	if (!params.width)
+		params.width = 1;
 	free(params.str - params.len);
 	return (params);
 }

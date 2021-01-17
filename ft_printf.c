@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 20:21:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 01:06:19 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 02:06:57 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,24 @@ int main()
     ft_printf("%10c", c);*/
 
     int c = 23;
-    printf("(%-033p)\n", c);
-    ft_printf("(%-033p)\n", c);
+    int i = 44;
+    /* I tested a lot with when malloc fails but what should the return value be? */
+    printf("return %d", printf("(%p %p)\n", NULL, &c));
+    ft_printf("return %d", ft_printf("(%p %p)\n", NULL, &c));
+    //printf("(%p %p %p %p)\n", &c, NULL, NULL, NULL);
+    //ft_printf("(%p %p %p %p)\n", &c, NULL, NULL, NULL);
+    /*printf("(%p)\n", c);
+    ft_printf("(%p)\n", c);
+    printf("(%.5p)\n", c);
+    ft_printf("(%.5p)\n", c);
+    printf("(%10.4p)\n", c);
+    ft_printf("(%10.4p)\n", c);
+    printf("(%3.3p)\n", &c);
+    ft_printf("(%3.3p)\n", &c);
+    printf("(%2p)\n", &c);
+    ft_printf("(%2p)\n", &c);
+    printf("(%p)\n", NULL);
+    ft_printf("(%p)\n", NULL);*/
     //ft_printf("(%p)\n", &i);
 
     /* EXTERNAL TEST */
@@ -92,10 +108,9 @@ int main()
     //printf("return value: (%d)\n", printf("test1: (%020.15p) - ", &p));
     
     //printf("(%*d)\n", -5, 3);
-    //printf("(%+5d)\n", 3);
+    //ft_printf("(%*d)\n", -5, 3);
+    //printf("(%-4c)\n", 'g');
     //ft_printf("(%-4c)\n", 'g');
-    //printf("%+ d\n", 3);
-    //printf("%05d\n", 3);
     //ft_printf("hoi%-*.*casd\n", 3, 4, 'h');
     //ft_printf("hoi% d\n", 3);
     //printf("return value: (%d)\n", printf("test1: (%d) - ", 23));

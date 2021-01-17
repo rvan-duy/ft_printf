@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 10:49:38 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/14 17:28:15 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 01:30:26 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ char	*generate_d_string(parameters input, va_list args)
 	char	padder;
 
 	padder = find_padder(input.flag_zero);
-	if (!input.width)
-		input.width = 1;
 	tmp1 = ft_itoa(va_arg(args, int));
 	if (!tmp1)
 		return (NULL);
@@ -31,7 +29,5 @@ char	*generate_d_string(parameters input, va_list args)
 		return (NULL);
 	str = expand_str(tmp2, padder, input.width, input.flag_minus);
 	free(tmp2);
-	if (!str)
-		return (NULL);
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 12:44:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/14 17:32:12 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/17 01:30:18 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,5 @@ char	*expand_str(char *str, char padder, int range, int flag_minus)
 	else
 		newstr = ft_strjoin(tmp, str);
 	free(tmp);
-	if (!newstr)
-		return (NULL);
 	return (newstr);
 }
