@@ -6,28 +6,67 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 10:49:38 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 12:23:12 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/18 19:05:57 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-char	*pf_string_d_create(parameters input, va_list args)
+static char	*pf_string_d_create_positive(int d, parameters input, char padder)
 {
-	char	*tmp1;
-	char	*tmp2;
 	char	*str;
-	char	padder;
 
-	padder = pf_padder_find(input.flag_zero);
-	tmp1 = ft_itoa(va_arg(args, int));
-	if (!tmp1)
-		return (NULL);
-	tmp2 = pf_string_expand(tmp1, '0', input.precision, 0);
-	free(tmp1);
-	if (!tmp2)
-		return (NULL);
-	str = pf_string_expand(tmp2, padder, input.width, input.flag_minus);
-	free(tmp2);
+	str = ft_itoa(d);
+	str = pf_string_expand(str, '0', input.precision, 0);
+	str = pf_string_expand(str, padder, input.width, input.flag_minus);
 	return (str);
+}
+
+static char	*pf_strjoin(char const *s1, char const *s2)
+{
+	char	*newstr;
+	int		len1;
+	int		len2;
+
+	if (!s1 || !s2)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	newstr = ft_calloc(len1 + len2 + 1, sizeof(char));
+	if (!newstr)
+		return (NULL);
+	ft_strlcpy(newstr, s1, len1 + 1);
+	ft_strlcat(newstr, s2, len1 + len2 + 1);
+	free(s2);
+	return (newstr);
+}
+
+static char	*pf_string_d_create_negative(int d, parameters input, char padder)
+{
+	char	*str;
+
+	d = pf_int_negative_to_positive(d);
+	str = ft_itoa(d);
+	str = pf_string_expand(str, '0', input.precision, 0);
+	if (!input.flag_zero)
+		str = pf_strjoin("-", str);
+	str = pf_string_expand(str, padder, input.width, input.flag_minus);
+	if (input.flag_zero)
+		str[0] = '-';
+	return (str);
+}
+
+char		*pf_string_d_create(parameters input, va_list args)
+{
+	char	*tmp;
+	char	padder;
+	int		d;
+
+	if (input.flag_zero && input.precision > 0)
+		input.flag_zero = 0;
+	padder = pf_padder_find(input.flag_zero);
+	d = va_arg(args, int);
+	if (d < 0)
+		return (pf_string_d_create_negative(d, input, padder));
+	return (pf_string_d_create_positive(d, input, padder));
 }

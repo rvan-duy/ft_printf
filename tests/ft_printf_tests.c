@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 16:48:18 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 18:21:13 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/18 19:05:21 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,35 @@
 
 int     main()
 {
-    /* Testing 2 flags at the same time */
-    printf("(%0-20d)\n", 1);
-    ft_printf("(%0-20d)\n", 1);
-    printf("(%0-20c)\n", 'c');
-    ft_printf("(%0-20c)\n", 'c');
-    printf("(%0-20s)\n", "string");
-    ft_printf("(%0-20s)\n", "string");
-    printf("(%0-20u)\n", 1);
-    ft_printf("(%0-20u)\n", 1);
-    printf("(%0-20x)\n", 1);
-    ft_printf("(%0-20x)\n", 1);
-    printf("(%0-20X)\n", 1);
-    ft_printf("(%0-20X)\n", 1);
+    /* Char tests:
+    int i = 0;
+    printf("return value: (%d)\n", printf("test %d: (%c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%4c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%4c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%3.3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%3.3c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%04c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%04c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%-3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%-3c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%-3.3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%-3.3c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%-.3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%-.3c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%0.3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%0.3c) - ", i++, 'c'));
+    printf("return value: (%d)\n", printf("test %d: (%-.3c) - ", i, 'c'));
+    ft_printf("return value: (%d)\n", ft_printf("test %d: (%-.3c) - ", i++, 'c'));
+ */
+
     /* Digit tests: any digit
     int max_size = 1000;
     int ret = pf_tests_digits_random(max_size);
-    ft_printf("return value of tests: (%d)\n", ret);*/
+    ft_printf("return value of tests: (%d)\n", ret); */
 
-    /* Digit tests: over max int
+
+    /* Digit tests: over max int */
     int w = 30;
     int p = 20;
     unsigned int u = 3000000000;
@@ -46,11 +56,17 @@ int     main()
     ft_printf("- return value: %d\n", ft_printf("%*.*d ", w, p, u));
     printf("- return value: %d\n", printf("%-*.*d ", w, p, u));
     ft_printf("- return value: %d\n", ft_printf("%-*.*d ", w, p, u));
+    printf("- return value: %d\n", printf("%*d ", w, -10));
+    ft_printf("- return value: %d\n", ft_printf("%*d ", w, -10));
+    printf("- return value: %d\n", printf("%0*d ", w, -10));
+    ft_printf("- return value: %d\n", ft_printf("%0*d ", w, -10));
     printf("- return value: %d\n", printf("%0*.*d ", w, p, u));
     ft_printf("- return value: %d\n", ft_printf("%0*.*d ", w, p, u));
     printf("- return value: %d\n", printf("%0-*.*d ", w, p, u));
-    ft_printf("- return value: %d\n", ft_printf("%0-*.*d ", w, p, u));*/
-
+    ft_printf("- return value: %d\n", ft_printf("%0-*.*d ", w, p, u));
+    printf("- return value: %d\n", printf("%0-*.*d ", w, 2, u));
+    ft_printf("- return value: %d\n", ft_printf("%0-*.*d ", w, 2, u));
+    
     /* Digit tests: random widths
     int ret = pf_tests_digits_widths_random();
     ft_printf("return value of tests: (%d)\n", ret);*/
