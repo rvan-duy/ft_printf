@@ -6,20 +6,20 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/19 20:21:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 16:35:52 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/19 00:31:18 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_putchar_len(char c, lengths *lens)
+static void ft_putchar_len(char c, lengths *lens)
 {
     write(1, &c, 1);
     lens->specifier++;
     lens->str++;
 }
 
-int     ft_printf(const char *c, ...)
+int         ft_printf(const char *c, ...)
 {
     va_list args;
     lengths lens;

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 16:48:18 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/19 00:16:59 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/19 00:29:03 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,11 @@ int     main()
     int ret = pf_tests_digits_widths_random();
     ft_printf("return value of tests: (%d)\n", ret);*/
     
+    /* Pointer tests
     pf_tests_pointers_run();
-    //pf_tests_pointers_null_run();
-    //int ret = pf_tests_pointers_random();
-    //ft_printf("return value of tests: (%d)\n", ret);
+    pf_tests_pointers_null_run();
+    int ret = pf_tests_pointers_random();
+    ft_printf("return value of tests: (%d)\n", ret);*/
 
 
 
