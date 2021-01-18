@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 11:30:31 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/18 14:28:18 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/19 00:18:44 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ char        *pf_string_expand(char *str, char padder, int range, int flag_minus)
 char        pf_padder_find(int flag_zero);
 char        *pf_error_return(char specifier);
 int         pf_int_negative_to_positive(int n);
+char        *pf_strjoin(char const *s1, char const *s2);
 
 // ILLEGAL -- REMOVE AFTERWARDS
 void        print_struct(parameters input);

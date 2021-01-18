@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 12:44:53 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/18 18:28:17 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/19 00:18:15 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,23 @@ int		pf_int_negative_to_positive(int n)
 	if (n < 0)
 		n *= -1;
 	return (n);
+}
+
+char	*pf_strjoin(char const *s1, char const *s2)
+{
+	char	*newstr;
+	int		len1;
+	int		len2;
+
+	if (!s1 || !s2)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	newstr = ft_calloc(len1 + len2 + 1, sizeof(char));
+	if (!newstr)
+		return (NULL);
+	ft_strlcpy(newstr, s1, len1 + 1);
+	ft_strlcat(newstr, s2, len1 + len2 + 1);
+	free(s2);
+	return (newstr);
 }

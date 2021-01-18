@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/16 18:15:09 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 16:09:42 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/19 00:21:31 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,9 @@ static char	*ltox(unsigned long n)
 	return (str);
 }
 
-char	*pf_string_p_create(parameters input, va_list args)
+char		*pf_string_p_create(parameters input, va_list args)
 {
 	char			*str;
-	char			*tmp1;
-	char			*tmp2;
-	char			*tmp3;
 	char			padder;
 	void			*ptr;
 	unsigned long	ptr_value;
@@ -65,14 +62,11 @@ char	*pf_string_p_create(parameters input, va_list args)
 	padder = pf_padder_find(input.flag_zero);
 	ptr = va_arg(args, void*);
 	ptr_value = (unsigned long)ptr;
-	tmp1 = ltox(ptr_value);
-	tmp2 = pf_string_expand(tmp1, '0', input.precision, 0);
-	free(tmp1);
-	tmp3 = ft_strjoin("0x", tmp2);
-	free(tmp2);
-	if (!tmp3)
-		tmp3 = pf_error_return('p');
-	str = pf_string_expand(tmp3, padder, input.width, input.flag_minus);
-	free(tmp3);
+	str = ltox(ptr_value);
+	str = pf_string_expand(str, '0', input.precision, 0);
+	str = pf_strjoin("0x", str);
+	if (!str)
+		str = pf_error_return('p');
+	str = pf_string_expand(str, padder, input.width, input.flag_minus);
 	return (str);
 }

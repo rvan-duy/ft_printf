@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 10:49:38 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/18 19:05:57 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/19 00:18:07 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,6 @@ static char	*pf_string_d_create_positive(int d, parameters input, char padder)
 	str = pf_string_expand(str, '0', input.precision, 0);
 	str = pf_string_expand(str, padder, input.width, input.flag_minus);
 	return (str);
-}
-
-static char	*pf_strjoin(char const *s1, char const *s2)
-{
-	char	*newstr;
-	int		len1;
-	int		len2;
-
-	if (!s1 || !s2)
-		return (NULL);
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	newstr = ft_calloc(len1 + len2 + 1, sizeof(char));
-	if (!newstr)
-		return (NULL);
-	ft_strlcpy(newstr, s1, len1 + 1);
-	ft_strlcat(newstr, s2, len1 + len2 + 1);
-	free(s2);
-	return (newstr);
 }
 
 static char	*pf_string_d_create_negative(int d, parameters input, char padder)
