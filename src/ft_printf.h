@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 00:48:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/29 00:49:48 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/29 13:16:17 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@
 # define PRECISION 'p'
 
 typedef struct		s_params {
-	int				len;
+	int				paramlen;
 	char			*str;
 	int				flag_minus;
 	int				flag_zero;
 	int				width;
 	int				precision;
 	char			specifier;
+	int				strlen;
 }					t_params;
 
 void				PF_PRINT_STRUCT(t_params *p); // delete at the end
@@ -57,7 +58,7 @@ int					pf_string_x_create(t_params *p, va_list args);
 int					pf_string_u_create(t_params *p, va_list args);
 int					pf_string_p_create(t_params *p, va_list args);
 char				*pf_string_expand(char *str, char padder, int range, int flag_minus);
-char				*pf_error_return(char specifier);
+int					pf_error_return(char specifier);
 
 
 #endif

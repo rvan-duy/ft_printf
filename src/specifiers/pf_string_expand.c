@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:09:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/26 11:34:28 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/29 12:01:23 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,6 @@ char		*pf_string_expand(char *str, char padder, int range, int flag_minus)
 	free(tmp);
 	free(str);
 	return (newstr);
-}
-
-// Eigen file hiervoor??
-char		*pf_error_return(char specifier)
-{
-	if (specifier == 'p')
-		return (ft_strdup("(nil)"));
-	return (NULL);
 }
 
 char	pf_padder_find(int flag_zero)
