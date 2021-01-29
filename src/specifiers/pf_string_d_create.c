@@ -6,20 +6,20 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:17:50 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/25 22:41:51 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/27 16:51:06 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static char	*pf_string_d_create_positive(int d, t_params *p, char padder)
+static int	pf_string_d_create_positive(int d, t_params *p, char padder)
 {
 	char	*str;
 
 	str = ft_itoa(d);
 	str = pf_string_expand(str, '0', p->precision, 0);
 	str = pf_string_expand(str, padder, p->width, p->flag_minus);
-	return (str);
+	return (ft_putstr_fd(str, 1));
 }
 
 static int	pf_int_negative_to_positive(int n)
@@ -29,7 +29,7 @@ static int	pf_int_negative_to_positive(int n)
 	return (n);
 }
 
-static char	*pf_string_d_create_negative(int d, t_params *p, char padder)
+static int	pf_string_d_create_negative(int d, t_params *p, char padder)
 {
 	char	*str;
 
@@ -41,10 +41,10 @@ static char	*pf_string_d_create_negative(int d, t_params *p, char padder)
 	str = pf_string_expand(str, padder, p->width, p->flag_minus);
 	if (p->flag_zero)
 		str[0] = '-';
-	return (str);
+	return (ft_putstr_fd(str, 1));
 }
 
-char		*pf_string_d_create(t_params *p, va_list args)
+int			pf_string_d_create(t_params *p, va_list args)
 {
 	char	padder;
 	int		d;

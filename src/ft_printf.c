@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:01:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/25 23:10:52 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/26 11:35:47 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,18 @@ int		ft_printf(const char *c, ...)
 	}
 	va_end(args);
 	return (len);
+}
+
+int main()
+{
+	char c = '\0';
+
+	printf("%10c\n", c);
+	// write(1, &c, 1);
+	// write(1, "\n", 1);
+	ft_printf("%10c\n", c);
+
+
+
+	return 0;
 }

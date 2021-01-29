@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 00:48:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/25 23:09:53 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/29 00:49:48 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,14 @@ void				pf_precision_read(t_params *p, va_list args);
 void				pf_specifier_read(t_params *p);
 char				*pf_strjoin(char const *s1, char *s2);
 
-char 				*pf_string_create(t_params *p, va_list args);
+int					pf_string_create(t_params *p, va_list args);
 char				pf_padder_find(int flag_zero);
-char				*pf_string_s_create(t_params *p, va_list args);
-char				*pf_string_d_create(t_params *p, va_list args);
-char				*pf_string_x_create(t_params *p, va_list args);
-char				*pf_string_u_create(t_params *p, va_list args);
-char				*pf_string_p_create(t_params *p, va_list args);
+int					pf_string_c_create(t_params *p, va_list args);
+int					pf_string_s_create(t_params *p, va_list args);
+int					pf_string_d_create(t_params *p, va_list args);
+int					pf_string_x_create(t_params *p, va_list args);
+int					pf_string_u_create(t_params *p, va_list args);
+int					pf_string_p_create(t_params *p, va_list args);
 char				*pf_string_expand(char *str, char padder, int range, int flag_minus);
 char				*pf_error_return(char specifier);
 
