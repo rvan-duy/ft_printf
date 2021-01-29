@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:21:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/29 13:23:04 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/29 23:28:55 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ static int	pf_format_read(const char *c, t_params *p, va_list args)
 	return (1);
 }
 
-int			pf_format_specifier_handler(const char *c, va_list args)
+int			pf_format_specifier_handler(const char *c, va_list args, int *len)
 {
 	t_params	format;
-	int			ret;
 
 	c++;
 	if (pf_format_read(c, &format, args))
+	{
+		*len += format.paramlen + 1;
 		return (pf_string_create(&format, args));
-	else
-		return (pf_error_return(format.precision));
-	return (ret);
+	}
+	return (pf_error_return(format.precision));
 }

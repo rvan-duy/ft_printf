@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:01:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/29 13:20:36 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/01/29 23:39:15 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,31 +17,29 @@ int		ft_printf(const char *c, ...)
 {
 	va_list args;
 	int		len;
+	int 	ret;
 
 	len = 0;
+	ret = 0;
 	va_start(args, c);
 	while (c[len])
 	{
 		if (c[len] != '%')
 		{
-			ft_putchar_fd(c[len], 1);
+			ret += ft_putchar_fd(c[len], 1);
 			len++;
 		}
 		else
-			len += pf_format_specifier_handler(c + len, args);
+			ret += pf_format_specifier_handler(c + len, args, &len);
 	}
 	va_end(args);
-	return (len);
+	return (ret);
 }
 
 int main()
 {
 	char c = 'd';
 
-	printf("%d - " , printf("(%10c)\n", c));
-	//ft_printf("(%10c)\n", c);
-
-
-
+	
 	return 0;
 }
