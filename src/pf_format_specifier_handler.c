@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:21:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/29 23:28:55 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/01 23:45:09 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		PF_PRINT_STRUCT(t_params *p)
 static int	pf_format_read(const char *c, t_params *p, va_list args)
 {
 	p->width = 0;
-	p->precision = 0;
+	p->precision = -1;
 	if (pf_specifier_len(c, p))
 		p->str = ft_strndup(c, p->paramlen);
 	if (!p->str || !p->paramlen)
@@ -54,5 +54,5 @@ int			pf_format_specifier_handler(const char *c, va_list args, int *len)
 		*len += format.paramlen + 1;
 		return (pf_string_create(&format, args));
 	}
-	return (pf_error_return(format.precision));
+	return (0);
 }

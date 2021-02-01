@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:01:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/29 23:39:15 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/02 00:21:47 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,14 @@ int		ft_printf(const char *c, ...)
 
 int main()
 {
-	char c = 'd';
+	char *s = ft_strdup("Hello");
+	//char *s = NULL;
 
-	
+	printf("ret: %d\n" , printf("(%-3.4s)", s));
+	ft_printf("ret: %d\n" , ft_printf("(%-3.4s)", s));
+	//printf("(%20.6s)\n", s);
+	//ft_printf("(%20.6s)\n", s);
+	//printf("(%20.14s)\n", s);
+	//ft_printf("(%20.14s)\n", s);
 	return 0;
 }
