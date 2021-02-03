@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 18:36:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/03 14:52:55 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/03 15:02:56 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static char	*string_p_itox(unsigned long long n)
 	int		len;
 
 	if (!n)
-		return (NULL);
+		return (ft_strdup("0"));
 	len = string_p_hex_len(n);
 	str = ft_calloc(len + 1, sizeof(char));
 	if (!str)

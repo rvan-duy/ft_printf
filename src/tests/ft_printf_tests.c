@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 16:48:18 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/03 14:39:44 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/03 15:29:53 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ int     main()
     //pf_tests_char_random();
 
     // strings
-    pf_tests_strings_random();
+    //pf_tests_strings_random();
     //ft_printf("%s", NULL);
-    //printf("%s\n", NULL);
+    //printf("%p", NULL);
+    printf("%010d", -50);
 
 
     /* Pointer tests */
