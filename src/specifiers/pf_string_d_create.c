@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:17:50 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/27 16:51:06 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/03 14:54:25 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 static int	pf_string_d_create_positive(int d, t_params *p, char padder)
 {
 	char	*str;
+	int 	ret;
 
 	str = ft_itoa(d);
 	str = pf_string_expand(str, '0', p->precision, 0);
 	str = pf_string_expand(str, padder, p->width, p->flag_minus);
-	return (ft_putstr_fd(str, 1));
+	ret = ft_putstr_fd(str, 1);
+	free(str);
+	return (ret);
 }
 
 static int	pf_int_negative_to_positive(int n)
@@ -32,6 +35,7 @@ static int	pf_int_negative_to_positive(int n)
 static int	pf_string_d_create_negative(int d, t_params *p, char padder)
 {
 	char	*str;
+	int 	ret;
 
 	d = pf_int_negative_to_positive(d);
 	str = ft_itoa(d);
@@ -41,7 +45,9 @@ static int	pf_string_d_create_negative(int d, t_params *p, char padder)
 	str = pf_string_expand(str, padder, p->width, p->flag_minus);
 	if (p->flag_zero)
 		str[0] = '-';
-	return (ft_putstr_fd(str, 1));
+	ret = ft_putstr_fd(str, 1);
+	free(str);
+	return (ret);
 }
 
 int			pf_string_d_create(t_params *p, va_list args)
@@ -49,7 +55,7 @@ int			pf_string_d_create(t_params *p, va_list args)
 	char	padder;
 	int		d;
 
-	if (p->flag_zero && p->precision > 0)
+	if (p->flag_zero && p->precision >= 0)
 		p->flag_zero = 0;
 	padder = pf_padder_find(p->flag_zero);
 	d = va_arg(args, int);

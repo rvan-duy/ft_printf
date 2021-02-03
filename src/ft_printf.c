@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:01:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/02 00:21:47 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/02 16:56:11 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,12 @@ int		ft_printf(const char *c, ...)
 	return (ret);
 }
 
+/*
 int main()
 {
-	char *s = ft_strdup("Hello");
-	//char *s = NULL;
-
-	printf("ret: %d\n" , printf("(%-3.4s)", s));
-	ft_printf("ret: %d\n" , ft_printf("(%-3.4s)", s));
-	//printf("(%20.6s)\n", s);
-	//ft_printf("(%20.6s)\n", s);
-	//printf("(%20.14s)\n", s);
-	//ft_printf("(%20.14s)\n", s);
+	printf("return value: (%d) <---- Real Printf\n", printf("(%0.*d) - ", 0, 10));
+    ft_printf("return value: (%d) <---- Your Printf\n", ft_printf("(%0.*d) - ", 0, 10));
+	printf("return value: (%d) <---- Real Printf\n", printf("(%0.*d) - ", 0, -10));
+    ft_printf("return value: (%d) <---- Your Printf\n", ft_printf("(%0.*d) - ", 0, -10));
 	return 0;
-}
+}*/

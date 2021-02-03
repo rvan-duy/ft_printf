@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 18:36:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/27 17:17:52 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/03 14:52:55 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,10 @@ static char	*string_p_itox(unsigned long long n)
 
 int			pf_string_p_create(t_params *p, va_list args)
 {
-	char *str;
-	char *tmp;
-	char padder;
+	char 	*str;
+	char 	*tmp;
+	char 	padder;
+	int 	ret;
 
 	if (p->flag_zero && !p->precision)
 		p->precision = p->width - 2;
@@ -66,5 +67,7 @@ int			pf_string_p_create(t_params *p, va_list args)
 	tmp = pf_string_expand(tmp, '0', p->precision, 0);
 	str = pf_strjoin("0x", tmp);
 	str = pf_string_expand(str, padder, p->width, p->flag_minus);
-	return (ft_putstr_fd(str, 1));
+	ret = ft_putstr_fd(str, 1);
+	free(str);
+	return (ret);
 }
