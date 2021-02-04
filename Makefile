@@ -21,7 +21,10 @@ OBJ_DIR = obj
 FT_PRINTF =	ft_printf.c \
 			pf_format_specifier_handler.c \
 			pf_string_create.c \
+			pf_error_return.c \
 			pf_utils_1.c \
+			pf_utils_2.c \
+			specifiers/pf_string_c_create.c \
 			specifiers/pf_string_d_create.c \
 			specifiers/pf_string_p_create.c \
 			specifiers/pf_string_s_create.c \

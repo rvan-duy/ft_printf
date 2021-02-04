@@ -6,12 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:01:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/02 16:56:11 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/04 10:33:08 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int		ft_printf(const char *c, ...)
 {
@@ -35,13 +34,3 @@ int		ft_printf(const char *c, ...)
 	va_end(args);
 	return (ret);
 }
-
-/*
-int main()
-{
-	printf("return value: (%d) <---- Real Printf\n", printf("(%0.*d) - ", 0, 10));
-    ft_printf("return value: (%d) <---- Your Printf\n", ft_printf("(%0.*d) - ", 0, 10));
-	printf("return value: (%d) <---- Real Printf\n", printf("(%0.*d) - ", 0, -10));
-    ft_printf("return value: (%d) <---- Your Printf\n", ft_printf("(%0.*d) - ", 0, -10));
-	return 0;
-}*/
