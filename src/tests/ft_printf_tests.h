@@ -6,11 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/17 16:17:05 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/03 14:09:35 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/05 13:04:22 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 # define uint unsigned int
 

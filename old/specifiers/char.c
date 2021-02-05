@@ -6,11 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/11 22:09:43 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/17 12:21:25 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/05 13:04:22 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 char	*pf_string_c_create(parameters input, va_list args)
 {

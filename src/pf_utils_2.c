@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 10:50:34 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/26 10:55:51 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/05 16:07:13 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	pf_asterisk_read(t_params *p, va_list args, char type)
 		value *= -1;
 	}
 	if (value < 0 && type == PRECISION)
-		return (0);
+		return (-1);
 	return (value);
 }
 

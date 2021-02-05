@@ -6,11 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 11:27:49 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/19 00:22:56 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/05 13:04:22 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 static int	hex_len(unsigned int n)
 {

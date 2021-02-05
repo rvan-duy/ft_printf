@@ -6,18 +6,18 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:45:51 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/03 14:55:28 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/05 15:48:44 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 static int	hex_len(unsigned int n)
 {
 	int len;
 
-	len = 0;
+	len = 1;
 	while (n > 0)
 	{
 		n /= 16;

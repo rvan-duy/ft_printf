@@ -6,11 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:17:50 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/03 14:54:25 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/05 16:20:10 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 static int	pf_string_d_create_positive(int d, t_params *p, char padder)
 {
@@ -39,7 +39,9 @@ static int	pf_string_d_create_negative(int d, t_params *p, char padder)
 
 	d = pf_int_negative_to_positive(d);
 	str = ft_itoa(d);
+	printf("\n%s\n", str);
 	str = pf_string_expand(str, '0', p->precision, 0);
+	printf("\n%s\n", str);
 	if (!p->flag_zero)
 		str = pf_strjoin("-", str);
 	str = pf_string_expand(str, padder, p->width, p->flag_minus);

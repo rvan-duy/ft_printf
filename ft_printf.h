@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 00:48:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/01 23:45:38 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/05 15:18:22 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,5 @@ int					pf_string_x_create(t_params *p, va_list args);
 int					pf_string_u_create(t_params *p, va_list args);
 int					pf_string_p_create(t_params *p, va_list args);
 char				*pf_string_expand(char *str, char padder, int range, int flag_minus);
-int					pf_error_return(t_params *p);
-
 
 #endif

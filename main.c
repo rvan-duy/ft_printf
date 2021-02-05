@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   pf_error_return.c                                  :+:    :+:            */
+/*   main.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/29 12:01:24 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/01 23:44:12 by rvan-duy      ########   odam.nl         */
+/*   Created: 2021/02/04 10:29:44 by rvan-duy      #+#    #+#                 */
+/*   Updated: 2021/02/05 16:40:31 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdio.h>
 
-int     pf_error_return(t_params *p)
+int	ft_printf(const char *c, ...);
+
+int main()
 {
-	if (p->specifier == 'p')
-		return (ft_putstr_fd("(nil)", 1));
-	return (0);
+    int ret1 = printf("(%s)\n", "Hey");
+    int ret2 = ft_printf("(%s)\n", "Hey");
+    printf("ret1: %d\nret2: %d\n", ret1, ret2);
+
+    return 0;
 }
