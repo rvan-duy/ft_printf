@@ -6,7 +6,7 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/25 22:42:14 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/02/05 15:48:36 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/02/06 18:00:18 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ FT_PRINTF =	ft_printf.c \
 			specifiers/pf_string_s_create.c \
 			specifiers/pf_string_u_create.c \
 			specifiers/pf_string_x_create.c \
+			specifiers/pf_string_percentage_create.c \
 			specifiers/pf_string_expand.c
 
 SRC	= $(addprefix $(SRC_DIR)/, $(FT_PRINTF))

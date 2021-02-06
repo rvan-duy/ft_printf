@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 00:48:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/05 15:18:22 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/06 17:54:24 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int					pf_string_d_create(t_params *p, va_list args);
 int					pf_string_x_create(t_params *p, va_list args);
 int					pf_string_u_create(t_params *p, va_list args);
 int					pf_string_p_create(t_params *p, va_list args);
+int					pf_string_percentage_create(t_params *p);
 char				*pf_string_expand(char *str, char padder, int range, int flag_minus);
 
 #endif

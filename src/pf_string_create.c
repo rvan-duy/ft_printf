@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 16:57:36 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/05 15:21:13 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/06 17:59:46 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int		pf_string_create(t_params *p, va_list args)
 	if (p->specifier == 'p')
 		return (pf_string_p_create(p, args));
 	if (p->specifier == '%')
-		return (ft_putchar_fd('%', 1));
+		return (pf_string_percentage_create(p));
 	return (0);
 }

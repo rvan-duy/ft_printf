@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:17:50 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/05 16:20:10 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/06 17:44:18 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ static int	pf_string_d_create_positive(int d, t_params *p, char padder)
 	char	*str;
 	int 	ret;
 
-	str = ft_itoa(d);
+	if (d == 0 && p->precision == 0)
+		str = ft_strdup("");
+	else
+		str = ft_itoa(d);
 	str = pf_string_expand(str, '0', p->precision, 0);
 	str = pf_string_expand(str, padder, p->width, p->flag_minus);
 	ret = ft_putstr_fd(str, 1);
@@ -39,14 +42,14 @@ static int	pf_string_d_create_negative(int d, t_params *p, char padder)
 
 	d = pf_int_negative_to_positive(d);
 	str = ft_itoa(d);
-	printf("\n%s\n", str);
 	str = pf_string_expand(str, '0', p->precision, 0);
-	printf("\n%s\n", str);
 	if (!p->flag_zero)
 		str = pf_strjoin("-", str);
 	str = pf_string_expand(str, padder, p->width, p->flag_minus);
-	if (p->flag_zero)
+	if (p->flag_zero && str[0] == '0')
 		str[0] = '-';
+	else if (p->flag_zero && str[0] != '0')
+		str = pf_strjoin("-", str);
 	ret = ft_putstr_fd(str, 1);
 	free(str);
 	return (ret);

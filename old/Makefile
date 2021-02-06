@@ -1,1 +1,0 @@
-gcc ft_printf.c -L. -lft
