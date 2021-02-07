@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:45:51 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/05 15:48:44 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/07 16:13:40 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	hex_len(unsigned int n)
 	int len;
 
 	len = 1;
-	while (n > 0)
+	while (n >= 16)
 	{
 		n /= 16;
 		len++;
@@ -40,18 +40,21 @@ static void	put_hex(char *str, int len, unsigned int n, char specifier)
 	}
 	else
 		str[len] = n + 48;
+	//printf("[strlen:%c][len:%i]", str[len], len);
 }
 
-static char	*itox(unsigned int n, char specifier)
+static char	*itox(unsigned int n, t_params *p)
 {
 	int		len;
 	char	*str;
 
+	if (n == 0 && p->precision == 0)
+		return (ft_strdup(""));
 	len = hex_len(n);
 	str = ft_calloc(len + 1, sizeof(char));
 	if (!str)
 		return (NULL);
-	put_hex(str, len - 1, n, specifier);
+	put_hex(str, len - 1, n, p->specifier);
 	return (str);
 }
 
@@ -63,8 +66,10 @@ int			pf_string_x_create(t_params *p, va_list args)
 	int		ret;
 
 	padder = pf_padder_find(p->flag_zero);
+	if (p->precision >= 0 && p->flag_zero)
+		padder = ' ';
 	decimal = va_arg(args, unsigned int);
-	str = itox(decimal, p->specifier);
+	str = itox(decimal, p);
 	str = pf_string_expand(str, '0', p->precision, 0);
 	str = pf_string_expand(str, padder, p->width, p->flag_minus);
 	ret = ft_putstr_fd(str, 1);

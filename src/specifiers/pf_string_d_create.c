@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:17:50 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/06 17:44:18 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/07 16:52:31 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ static int	pf_string_d_create_negative(int d, t_params *p, char padder)
 	int 	ret;
 
 	d = pf_int_negative_to_positive(d);
-	str = ft_itoa(d);
+	if (d != INT_MIN)
+		str = ft_itoa(d);
+	else
+		str = ft_strdup("2147483648");
 	str = pf_string_expand(str, '0', p->precision, 0);
 	if (!p->flag_zero)
 		str = pf_strjoin("-", str);

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 00:48:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/06 17:54:24 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/07 16:45:48 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@
 # define SPECIFIERS "cspdiuxX%"
 # define WIDTH 'w'
 # define PRECISION 'p'
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 typedef struct		s_params {
-	int				paramlen;
+	int				len;
 	char			*str;
 	int				flag_minus;
 	int				flag_zero;

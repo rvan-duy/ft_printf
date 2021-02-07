@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:42:04 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/01/29 13:21:05 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/07 16:24:42 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int			pf_specifier_len(const char *c, t_params *p)
 	char	*sp;
 
 	i = 0;
-	p->paramlen = 0;
+	p->len = 0;
 	sp = ft_strdup(SPECIFIERS);
 	if (!sp)
 		return (0);
 	while (!ft_strchr(sp, c[i]) || c[i] == '\0')
 		i++;
-	p->paramlen = i + 1;
+	p->len = i + 1;
 	return (1);
 }
 
