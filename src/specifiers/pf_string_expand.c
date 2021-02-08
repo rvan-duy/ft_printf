@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:09:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/06 17:27:22 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/08 13:48:11 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,13 @@ char		*pf_string_expand(char *str, char padder, int range, int flag_minus)
 		return (NULL);
 	len = ft_strlen(str);
 	if (len >= range)
-		return (ft_strdup(str));
+		return (str);
 	tmp = ft_calloc(range - len + 1, sizeof(char));
 	if (!tmp)
+	{
+		free(str);
 		return (NULL);
+	}
 	ft_memset(tmp, padder, range - len);
 	if (flag_minus)
 		newstr = ft_strjoin(str, tmp);

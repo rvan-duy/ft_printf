@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:07:09 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/05 16:52:53 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/08 13:44:53 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ int		pf_string_s_create(t_params *p, va_list args)
 	else if (tmp)
 		str = ft_strndup(tmp, p->precision);
 	else
+	{
+		if (p->precision < 0)
+			p->precision = 6;
 		str = ft_strndup("(null)", p->precision);
+	}
 	str = pf_string_expand(str, ' ', p->width, p->flag_minus);
 	ret = ft_putstr_fd(str, 1);
 	free(str);
