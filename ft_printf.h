@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 00:48:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/09 13:44:44 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 15:35:10 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct		s_params {
 	char			specifier;
 }					t_params;
 
+int					ft_printf(const char *c, ...);
 int					pf_format_specifier_handler(const char *c, va_list args,
 					int *ret);
 int					pf_specifier_len(const char *c, t_params *p);
