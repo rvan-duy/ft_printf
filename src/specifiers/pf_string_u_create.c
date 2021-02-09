@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 18:34:10 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/06 18:55:19 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 11:16:46 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static char	*pf_utoa(t_params *p, unsigned int n)
 	return (newstr);
 }
 
-int	pf_string_u_create(t_params *p, va_list args)
+int			pf_string_u_create(t_params *p, va_list args)
 {
 	char	*str;
 	char	padder;

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 10:50:34 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/07 16:28:34 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 11:14:38 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,11 @@ char		*pf_strjoin(char const *s1, char *s2)
 	ft_strlcat(newstr, s2, len1 + len2 + 1);
 	free(s2);
 	return (newstr);
+}
+
+int			pf_ret_return(int ret, char *str)
+{
+	if (ret == 0 && str == NULL)
+		return (-1);
+	return (ret);
 }

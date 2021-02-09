@@ -6,12 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:45:51 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/07 16:13:40 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 11:17:15 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 static int	hex_len(unsigned int n)
 {
@@ -40,7 +39,6 @@ static void	put_hex(char *str, int len, unsigned int n, char specifier)
 	}
 	else
 		str[len] = n + 48;
-	//printf("[strlen:%c][len:%i]", str[len], len);
 }
 
 static char	*itox(unsigned int n, t_params *p)

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/03 14:06:31 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/03 14:40:44 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 11:45:34 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void    pf_tests_strings_random()
     ft_printf("(%9s)\n", c);
     printf("(%-09s)\n", c);
     ft_printf("(%-09s)\n", c);
+    free(c);
     return ;
 }

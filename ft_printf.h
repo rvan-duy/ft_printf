@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 00:48:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/07 16:45:48 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 11:50:31 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include "libft.h"
 # include <unistd.h>
 # include <stdarg.h>
-
-# include <stdio.h>
 
 # define SPECIFIERS "cspdiuxX%"
 # define WIDTH 'w'
@@ -35,12 +33,6 @@ typedef struct		s_params {
 	char			specifier;
 }					t_params;
 
-void				PF_PRINT_STRUCT(t_params *p); // delete at the end
-
-/*
-** Some usefull comment
-*/
-
 int					ft_printf(const char *c, ...);
 int					pf_format_specifier_handler(const char *c, va_list args, int *ret);
 int					pf_specifier_len(const char *c, t_params *p);
@@ -49,6 +41,7 @@ void				pf_width_read(t_params *p, va_list args);
 void				pf_precision_read(t_params *p, va_list args);
 void				pf_specifier_read(t_params *p);
 char				*pf_strjoin(char const *s1, char *s2);
+int					pf_ret_return(int ret, char *str);
 
 int					pf_string_create(t_params *p, va_list args);
 char				pf_padder_find(int flag_zero);

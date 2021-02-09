@@ -6,25 +6,11 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:21:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/07 16:58:11 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 11:49:45 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-
-void		PF_PRINT_STRUCT(t_params *p)
-{
-	printf("-- STRUCT --\n");
-	printf("- len: %d\n", p->len);
-	printf("- str: %s\n", p->str);
-	printf("- flag_minus: %d\n", p->flag_minus);
-	printf("- flag_zero: %d\n", p->flag_zero);
-	printf("- width: %d\n", p->width);
-	printf("- precision: %d\n", p->precision);
-	printf("- specifier: %c\n", p->specifier);
-	printf("-- END OF STRUCT --\n");
-}
 
 static int	pf_format_read(const char *c, t_params *p, va_list args)
 {
