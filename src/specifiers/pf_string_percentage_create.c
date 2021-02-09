@@ -6,11 +6,12 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/06 17:53:10 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/09 11:14:54 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 12:12:12 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 int		pf_string_percentage_create(t_params *p)
 {

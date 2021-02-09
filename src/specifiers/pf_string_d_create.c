@@ -6,11 +6,12 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:17:50 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/09 11:10:54 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 12:11:14 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static int	pf_string_d_create_positive(int d, t_params *p, char padder)
 {

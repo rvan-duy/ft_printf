@@ -6,11 +6,12 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:07:09 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/09 11:16:19 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 12:11:48 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 int		pf_string_s_create(t_params *p, va_list args)
 {

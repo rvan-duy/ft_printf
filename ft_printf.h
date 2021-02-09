@@ -6,15 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 00:48:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/09 11:50:31 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 12:07:32 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft.h"
-# include <unistd.h>
 # include <stdarg.h>
 
 # define SPECIFIERS "cspdiuxX%"
@@ -33,7 +31,6 @@ typedef struct		s_params {
 	char			specifier;
 }					t_params;
 
-int					ft_printf(const char *c, ...);
 int					pf_format_specifier_handler(const char *c, va_list args, int *ret);
 int					pf_specifier_len(const char *c, t_params *p);
 void				pf_flags_read(t_params *p);

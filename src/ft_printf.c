@@ -6,11 +6,12 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:01:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/09 11:24:11 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 12:06:08 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static int	pf_string_looper(const char *c, va_list args)
 {

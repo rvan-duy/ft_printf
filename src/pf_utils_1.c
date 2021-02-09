@@ -6,11 +6,12 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:42:04 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/08 00:05:43 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 12:07:57 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 int			pf_specifier_len(const char *c, t_params *p)
 {

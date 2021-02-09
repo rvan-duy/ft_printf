@@ -6,11 +6,12 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:21:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/09 11:49:45 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 12:07:16 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 static int	pf_format_read(const char *c, t_params *p, va_list args)
 {
