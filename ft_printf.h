@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 00:48:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/09 12:07:32 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/09 13:44:44 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ typedef struct		s_params {
 	char			specifier;
 }					t_params;
 
-int					pf_format_specifier_handler(const char *c, va_list args, int *ret);
+int					pf_format_specifier_handler(const char *c, va_list args,
+					int *ret);
 int					pf_specifier_len(const char *c, t_params *p);
 void				pf_flags_read(t_params *p);
 void				pf_width_read(t_params *p, va_list args);
@@ -49,6 +50,7 @@ int					pf_string_x_create(t_params *p, va_list args);
 int					pf_string_u_create(t_params *p, va_list args);
 int					pf_string_p_create(t_params *p, va_list args);
 int					pf_string_percentage_create(t_params *p);
-char				*pf_string_expand(char *str, char padder, int range, int flag_minus);
+char				*pf_string_expand(char *str, char padder, int range,
+					int flag_minus);
 
 #endif
