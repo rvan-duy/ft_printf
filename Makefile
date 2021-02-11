@@ -6,19 +6,15 @@
 #    By: rvan-duy <rvan-duy@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/25 22:42:14 by rvan-duy      #+#    #+#                  #
-#    Updated: 2021/02/09 15:37:14 by rvan-duy      ########   odam.nl          #
+#    Updated: 2021/02/11 15:14:06 by rvan-duy      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= libftprintf.a
-HEADERS	= ft_printf.h
-LIBFT	= ./libft/libft.a
+NAME	= libftprintf.a
 CC		= gcc
-FLAGS	= -Wall -Wextra -Werror -I.
-SRC_DIR = src
-OBJ_DIR = obj
-
-FT_PRINTF =	ft_printf.c \
+FLAGS	= -Wall -Wextra -Werror -I $(HEADER)
+HEADER 	= include
+PRINTF	= ft_printf.c \
 			pf_format_specifier_handler.c \
 			pf_string_create.c \
 			pf_utils_1.c \
@@ -32,37 +28,60 @@ FT_PRINTF =	ft_printf.c \
 			specifiers/pf_string_percentage_create.c \
 			specifiers/pf_string_expand.c
 
-SRC	= $(addprefix $(SRC_DIR)/, $(FT_PRINTF))
-OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+LIBFT	= ft_atoi.c \
+			ft_bzero.c \
+			ft_calloc.c \
+			ft_isdigit.c \
+			ft_itoa.c \
+			ft_memset.c \
+			ft_putchar_fd.c \
+			ft_putstr_fd.c \
+			ft_strchr.c \
+			ft_strdup.c \
+			ft_strjoin.c \
+			ft_strlcat.c \
+			ft_strlcpy.c \
+			ft_strlen.c \
+			ft_strndup.c		
+
+SRC_DIRS = \
+	$(addprefix libft/, $(LIBFT)) \
+	$(addprefix printf/, $(PRINTF))
+
+OBJ_DIRS = \
+	obj \
+	obj/libft \
+	obj/printf \
+	obj/printf/specifiers
 
 all: $(NAME)
 
-$(NAME): libft.a $(OBJ)
-	@cp $(LIBFT) $(NAME)
-	ar rcs $(NAME) $(OBJ)
+SRC	= $(addprefix src/, $(SRC_DIRS))
+OBJ = $(SRC:src/%.c=obj/%.o)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJ_DIR) obj/specifiers
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $?
+
+obj/%.o: src/%.c
+	@mkdir -p $(OBJ_DIRS)
 	$(CC) $(FLAGS) -c $< -o $@
 
-libft.a:
-	make -C ./libft
+.PHONY:	clean fclean re
 
 clean:
-	make clean -C ./libft
-	/bin/rm -f $(OBJ)
+	@/bin/rm -f $(OBJ)
 	@/bin/rm -f .DS_Store
+	@/bin/rm -f a.out
 
 fclean: clean
-	make fclean -C ./libft
-	/bin/rm -f $(NAME)
-	/bin/rm -f a.out
-	@/bin/rm -rf $(OBJ_DIR)
+	@/bin/rm -f $(NAME)
+	@/bin/rm -f *.a
+	@/bin/rm -rf $(OBJ_DIRS)
 
 re: fclean all
 
-.PHONY: clean fclean re
-
 main: all
-	$(CC) $(FLAGS) $(NAME) main.c
+	$(CC) $(FLAGS) $(UNUSED) $(NAME) main.c utils/*.c
 	./a.out
+
+test: main
