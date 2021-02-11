@@ -6,12 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 10:50:34 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/11 16:22:55 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/11 17:05:03 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
+#include <stdlib.h>
 
 static int	pf_asterisk_read(t_params *p, va_list args, char type)
 {

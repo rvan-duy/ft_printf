@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 00:48:30 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/11 16:19:59 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/11 17:44:00 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,10 @@ typedef struct		s_params {
 int					ft_printf(const char *c, ...);
 int					pf_format_specifier_handler(const char *c, va_list args,
 					int *ret);
-int					pf_specifier_len(const char *c, t_params *p);
-void				pf_flags_read(const char *c, t_params *p);
+void				pf_flags_read(t_params *p);
 void				pf_width_read(t_params *p, va_list args);
 void				pf_precision_read(t_params *p, va_list args);
-void				pf_specifier_read(t_params *p);
+int					pf_specifier_read(t_params *p);
 char				*pf_strjoin(char const *s1, char *s2);
 int					pf_ret_return(int ret, char *str);
 
