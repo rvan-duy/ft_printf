@@ -6,13 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:17:50 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/11 15:17:56 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:35:09 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
-#include <stdlib.h>
+#include <stdlib.h> // free
 
 static int	pf_string_d_create_positive(int d, t_params *p, char padder)
 {
@@ -60,7 +60,7 @@ static int	pf_string_d_create_negative(int d, t_params *p, char padder)
 	return (ret);
 }
 
-int			pf_string_d_create(t_params *p, va_list args)
+int	pf_string_d_create(t_params *p, va_list args)
 {
 	char	padder;
 	int		d;

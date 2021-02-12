@@ -6,13 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 18:36:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/11 15:18:15 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:36:52 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
-#include <stdlib.h>
+#include <stdlib.h> // free
 
 static int	string_p_hex_len(unsigned long long n)
 {
@@ -53,7 +53,7 @@ static char	*string_p_itox(unsigned long long n)
 	return (str);
 }
 
-int			pf_string_p_create(t_params *p, va_list args)
+int	pf_string_p_create(t_params *p, va_list args)
 {
 	char	*str;
 	char	*tmp;

@@ -6,13 +6,13 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/07 21:26:04 by ruben         #+#    #+#                 */
-/*   Updated: 2021/02/11 15:15:38 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:14:26 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int		ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
 	return (write(fd, &c, 1));
 }

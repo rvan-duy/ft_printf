@@ -6,15 +6,14 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 17:09:11 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/11 15:19:32 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:35:49 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include "libft.h"
-#include <stdlib.h>
+#include <stdlib.h> // free
 
-char		*pf_string_expand(char *str, char padder, int range, int flag_minus)
+char	*pf_string_expand(char *str, char padder, int range, int flag_minus)
 {
 	int		len;
 	char	*tmp;
@@ -41,7 +40,7 @@ char		*pf_string_expand(char *str, char padder, int range, int flag_minus)
 	return (newstr);
 }
 
-char		pf_padder_find(int flag_zero)
+char	pf_padder_find(int flag_zero)
 {
 	if (flag_zero)
 		return ('0');

@@ -6,17 +6,16 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:21:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/11 17:42:52 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:30:38 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
-#include <stdlib.h>
 
 static int	pf_specifier_strlen(const char *s, char specifier)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -43,7 +42,7 @@ static int	pf_format_read(const char *c, t_params *p, va_list args)
 	return (0);
 }
 
-int			pf_format_specifier_handler(const char *c, va_list args, int *len)
+int	pf_format_specifier_handler(const char *c, va_list args, int *len)
 {
 	t_params	format;
 

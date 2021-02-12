@@ -6,7 +6,7 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/10 15:51:14 by ruben         #+#    #+#                 */
-/*   Updated: 2020/11/15 16:23:09 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:11:47 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	intlen(int n)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (n < 0)
@@ -30,7 +30,7 @@ static int	intlen(int n)
 	return (len + 1);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		i;
 	char	*newstr;

@@ -6,13 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 16:57:36 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/06 17:59:46 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:21:01 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		pf_string_create(t_params *p, va_list args)
+int	pf_string_create(t_params *p, va_list args)
 {
 	if (p->specifier == 'c')
 		return (pf_string_c_create(p, args));

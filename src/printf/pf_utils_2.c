@@ -6,13 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 10:50:34 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/11 17:05:03 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:28:26 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
-#include <stdlib.h>
+#include <stdlib.h> // free
 
 static int	pf_asterisk_read(t_params *p, va_list args, char type)
 {
@@ -30,7 +30,7 @@ static int	pf_asterisk_read(t_params *p, va_list args, char type)
 	return (value);
 }
 
-void		pf_width_read(t_params *p, va_list args)
+void	pf_width_read(t_params *p, va_list args)
 {
 	if (*p->str == '*')
 		p->width = pf_asterisk_read(p, args, WIDTH);
@@ -41,7 +41,7 @@ void		pf_width_read(t_params *p, va_list args)
 	return ;
 }
 
-void		pf_precision_read(t_params *p, va_list args)
+void	pf_precision_read(t_params *p, va_list args)
 {
 	if (*p->str == '.')
 		p->str++;
@@ -55,7 +55,7 @@ void		pf_precision_read(t_params *p, va_list args)
 		p->str++;
 }
 
-char		*pf_strjoin(char const *s1, char *s2)
+char	*pf_strjoin(char const *s1, char *s2)
 {
 	char	*newstr;
 	int		len1;
@@ -74,7 +74,7 @@ char		*pf_strjoin(char const *s1, char *s2)
 	return (newstr);
 }
 
-int			pf_ret_return(int ret, char *str)
+int	pf_ret_return(int ret, char *str)
 {
 	if (ret == 0 && str == NULL)
 		return (-1);

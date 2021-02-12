@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/26 11:01:10 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/09 12:09:18 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:33:05 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	pf_putwidth(int width)
 	return (width);
 }
 
-int			pf_string_c_create(t_params *p, va_list args)
+int	pf_string_c_create(t_params *p, va_list args)
 {
 	char	c;
 	int		ret;

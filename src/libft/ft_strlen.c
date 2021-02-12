@@ -6,7 +6,7 @@
 /*   By: ruben <rvan-duy@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 10:12:17 by ruben         #+#    #+#                 */
-/*   Updated: 2020/10/29 13:31:59 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:17:10 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (s[count] != '\0')

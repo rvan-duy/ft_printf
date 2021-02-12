@@ -6,15 +6,15 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/06 17:53:10 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/11 15:19:14 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:37:17 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
-#include <stdlib.h>
+#include <stdlib.h> // free
 
-int		pf_string_percentage_create(t_params *p)
+int	pf_string_percentage_create(t_params *p)
 {
 	char	*str;
 	char	padder;

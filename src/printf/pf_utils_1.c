@@ -6,15 +6,14 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:42:04 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/11 17:43:46 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:27:18 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
-#include <stdlib.h>
 
-void		pf_flags_read(t_params *p)
+void	pf_flags_read(t_params *p)
 {
 	p->flag_minus = 0;
 	p->flag_zero = 0;
@@ -28,7 +27,7 @@ void		pf_flags_read(t_params *p)
 	}
 }
 
-int			pf_specifier_read(t_params *p)
+int	pf_specifier_read(t_params *p)
 {
 	if (ft_strchr(SPECIFIERS, *p->str))
 	{

@@ -6,7 +6,7 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/24 01:01:20 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/11 15:23:17 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:20:42 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	pf_string_looper(const char *c, va_list args)
 	return (ret);
 }
 
-int			ft_printf(const char *c, ...)
+int	ft_printf(const char *c, ...)
 {
 	va_list	args;
 	int		ret;

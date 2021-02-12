@@ -6,13 +6,13 @@
 /*   By: rvan-duy <rvan-duy@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/25 18:34:10 by rvan-duy      #+#    #+#                 */
-/*   Updated: 2021/02/11 15:18:43 by rvan-duy      ########   odam.nl         */
+/*   Updated: 2021/02/12 14:40:34 by rvan-duy      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
-#include <stdlib.h>
+#include <stdlib.h> // free
 
 static int	pf_utoa_intlen(unsigned int n)
 {
@@ -50,7 +50,7 @@ static char	*pf_utoa(t_params *p, unsigned int n)
 	return (newstr);
 }
 
-int			pf_string_u_create(t_params *p, va_list args)
+int	pf_string_u_create(t_params *p, va_list args)
 {
 	char	*str;
 	char	padder;
